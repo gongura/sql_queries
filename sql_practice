@@ -1,0 +1,77 @@
+SHOW DATABASES;
+--------------------------
+CREATE DATABASE testDB;
+DROP DATABASE databasename;
+------------------------------
+USE testDB;
+====================================
+CREATE TABLE persons (
+   id int NOT NULL PRIMARY KEY,
+   name varchar(255),
+   age int,
+   qualification varchar(255),
+   profession varchar(255)
+   );
+=====================================
+ DESC persons;
+ ====================================
+ 
+INSERT INTO persons (id,name,age,qualification,profession) VALUES (1,"ramesh",30,"mtech","sw");
+INSERT INTO persons VALUES (2,"sethu",21,"btech","ae");
+INSERT INTO persons (id, name) VALUES (3,"ramesh");
+=======================================================
+to modify existing column
+----------------------------
+ALTER TABLE persons MODIFY id int AUTO_INCREMENT;
+==================================================
+INSERT INTO persons (name,age,qualification,profession) VALUES ("ramesh",30,"mtech","sw");
+===========================================================================================
+To add new column
+------------------
+ALTER TABLE persons ADD adharNo int;
+========================================
+To Update the column values in a table
+----------------------------------------
+UPDATE persons SET adharNo = 100 WHERE id = 1;
+===============================================
+To drop column name
+---------------------
+ALTER TABLE persons DROP adharNo;
+ALTER TABLE persons DROP id;
+
+ALTER TABLE `tableName` ADD `Column_name` INT PRIMARY KEY AUTO_INCREMENT;
+
+ALTER TABLE persons ADD id INT NOT NULL PRIMARY KEY AUTO_INCREMENT;
+
+ALTER TABLE persons ADD adharNo int NOT NULL UNIQUE;
+
+ALTER TABLE product
+ADD CONSTRAINT UQ_product_name_producer UNIQUE(name, producer);
+
+ALTER TABLE persons MODIFY adharNo UNIQUE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
